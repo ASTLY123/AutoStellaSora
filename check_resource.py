@@ -6,6 +6,7 @@ from pathlib import Path
 from maa.resource import Resource
 from maa.tasker import Tasker, LoggingLevelEnum
 
+import test
 
 def check(dirs: List[Path]) -> bool:
     resource = Resource()
