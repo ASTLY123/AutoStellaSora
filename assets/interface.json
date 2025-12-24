@@ -21,19 +21,6 @@
             "name": "安卓端",
             "type": "Adb",
             "display_short_side": 720 // 默认缩放分辨率的短边长度
-        },
-        {
-            "name": "桌面端",
-            "type": "Win32",
-            "win32": {
-                "class_regex": ".*",
-                "window_regex": "Visual Studio"
-            },
-            // 截图及控制方式，请根据项目实际情况修改
-            // 文档: https://github.com/MaaXYZ/MaaFramework/blob/main/docs/zh_cn/2.4-%E6%8E%A7%E5%88%B6%E6%96%B9%E5%BC%8F%E8%AF%B4%E6%98%8E.md
-            "screencap": "PrintWindow", // 截图方式
-            "mouse": "PostMessageWithCursorPos", // 鼠标控制方式
-            "keyboard": "PostMessageWithCursorPos" // 键盘控制方式
         }
     ],
     "resource": [
@@ -42,67 +29,58 @@
             "path": [
                 "{PROJECT_DIR}/resource"
             ]
-        },
-        {
-            "name": "B 服",
-            "path": [
-                "{PROJECT_DIR}/resource",
-                "{PROJECT_DIR}/resource_bilibili"
-            ]
         }
     ],
-    // 可选的 agent 示例
-    // "agent": {
-    //     "child_exec": "python",
-    //     "child_args": [
-    //         "{PROJECT_DIR}/agent/main.py"
-    //     ]
-    // },
     "task": [
         {
-            "name": "普通任务",
-            "entry": "MyTask1"
+            "name": "0.进入游戏",
+            "entry": "进入游戏",
+            //TODO 异常情况 可能存在更新
+            "default_check": true
         },
         {
-            "name": "选项任务",
-            "entry": "MyTask2",
-            "option": [
-                "任务选项1"
-            ]
+            "name": "1.领取委托",
+            "entry": "领取委托",
+            "default_check": true
         },
         {
-            "name": "参数任务",
-            "entry": "MyTask3",
-            "option": [
-                "任务选项1"
-            ],
-            "pipeline_override": {}
+            "name": "2.领取采购奖励",
+            "entry": "领取采购奖励",
+            "default_check": true
         },
         {
-            "name": "带Custom的任务",
-            "entry": "MyTask4"
+            "name": "3.送礼物邀约",
+            "entry": "送礼物邀约",
+            "default_check": true
+        },
+        {
+            "name": "4.代理人互动",
+            "entry": "代理人互动",
+            "default_check": true
+        },
+        {
+            "name": "5.领取好友体力",
+            "entry": "领取好友体力",
+            "default_check": true
+        },
+        {
+            "name": "5.活动刷体力",
+            "entry": "活动刷体力",
+            "default_check": true
+        },
+        {
+            "name": "6.常规刷体力",
+            "entry": "常规刷体力"
+        },
+        {
+            "name": "7.每日奖励",
+            "entry": "每日奖励",
+            "default_check": true
+        },
+        {
+            "name": "8.领取大月卡",
+            "entry": "基金-领取大月卡",
+            "default_check": true
         }
-    ],
-    "option": {
-        "任务选项1": {
-            "cases": [
-                {
-                    "name": "文本1",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本1"
-                        }
-                    }
-                },
-                {
-                    "name": "文本2",
-                    "pipeline_override": {
-                        "OcrTask": {
-                            "text": "文本2"
-                        }
-                    }
-                }
-            ]
-        }
-    }
+    ]
 }

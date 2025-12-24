@@ -24,6 +24,43 @@
         "next": [
             "进入游戏-确认公告界面",
             "进入游戏-签到获得道具",
+            "进入游戏-确认委托按钮出现",
+            "进入游戏-点击空白处继续2",
+            "活动签到-点击任意位置领取奖励"
+            // 还可能存在其他奇怪的礼包界面 TODO 检查 有 点击空白处继续
+        ]
+    },
+    "活动签到-点击任意位置领取奖励": {
+        "recognition": "OCR",
+        "expected": "点击任意位置领取奖励",
+        "action": "Click",
+        "next": [
+            "活动-点击空白处继续",
+            "进入游戏-签到获得道具",
+            "进入游戏-确认委托按钮出现"
+        ]
+    },
+    "活动-点击空白处继续": {
+        "recognition": "OCR",
+        "expected": "点击空白处继续",
+        "action": "Click",
+        "next": [
+            "活动-获得道具"
+        ]
+    },
+    "活动-获得道具": {
+        "recognition": "OCR",
+        "expected": "获得道具",
+        "action": "Click",
+        "next": [
+            "进入游戏-签到获得道具",
+        ]
+    },
+    "进入游戏-点击空白处继续2": {
+        "recognition": "OCR",
+        "expected": "点击空白处继续",
+        "action": "Click",
+        "next": [
             "进入游戏-确认委托按钮出现"
         ]
     },
@@ -31,7 +68,11 @@
         "recognition": "OCR",
         "expected": "委托",
         "action": "DoNothing",
-        "next": []
+        "next": [
+            // 确认不到就常见按钮都点一遍
+            "进入游戏-点击空白处继续2",
+            "返回主界面"
+        ]
     },
     "进入游戏-确认公告界面": {
         "recognition": "OCR",
@@ -70,6 +111,7 @@
         "recognition": "TemplateMatch",
         "template": "确认签到界面.png",
         "action": "DoNothing",
+        "post_delay": 1000,
         "next": [
             "进入游戏-退出签到界面"
         ]
@@ -77,6 +119,16 @@
     "进入游戏-退出签到界面": {
         "recognition": "TemplateMatch",
         "template": "退出签到界面.png",
+        "action": "Click",
+        "next": [
+            "进入游戏-活动期内不再弹出",
+            "进入游戏-点击空白处继续3",
+            "进入游戏-确认委托按钮出现"
+        ]
+    },
+    "进入游戏-点击空白处继续3": {
+        "recognition": "OCR",
+        "expected": "点击空白处继续",
         "action": "Click",
         "next": [
             "进入游戏-活动期内不再弹出",
@@ -109,8 +161,10 @@
         "recognition": "TemplateMatch",
         "template": "一键收取委托按钮.png",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
-            "领取委托-委托额外奖励-检查跳过按钮"
+            "领取委托-委托额外奖励-检查跳过按钮",
+            "领取委托-确认再次派遣出现"
         ]
     },
     "领取委托-委托额外奖励-检查跳过按钮": {
@@ -133,10 +187,11 @@
         "recognition": "OCR",
         "expected": "点击空白处继续",
         "action": "Click",
+        "post_delay": 5000,
         "next": [
             // 可能出现多次委托额外奖励
             "领取委托-委托额外奖励-检查跳过按钮",
-            "领取委托-再次派遣"
+            "领取委托-确认再次派遣出现"
         ]
     },
     "领取委托-确认一键领取出现": {
@@ -148,7 +203,15 @@
             "返回主界面"
         ]
     },
-    "领取委托-再次派遣": {
+    "领取委托-确认再次派遣出现": {
+        "recognition": "OCR",
+        "expected": "再次派遣",
+        "action": "DoNothing",
+        "next": [
+            "领取委托-点击再次派遣"
+        ]
+    },
+    "领取委托-点击再次派遣": {
         "recognition": "OCR",
         "expected": "再次派遣",
         "action": "Click",
@@ -158,8 +221,33 @@
     },
     "返回主界面": {
         "recognition": "TemplateMatch",
-        "template": "返回主界面.png",
-        "action": "Click"
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "next": [
+            "确认委托按钮出现"
+        ]
+    },
+    "确认委托按钮出现": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "on_error": [
+            "尝试点击返回主界面的位置"
+        ]
+    },
+    "尝试点击返回主界面的位置": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            377,
+            37,
+            10,
+            10
+        ],
+        "next": [
+            "确认委托按钮出现"
+        ]
     },
     "领取采购奖励": {
         "recognition": "TemplateMatch",
@@ -180,6 +268,14 @@
     "领取采购奖励-确认获得道具": {
         "recognition": "OCR",
         "expected": "获得道具",
+        "action": "DoNothing",
+        "next": [
+            "领取采购奖励-点击空白处继续"
+        ]
+    },
+    "领取采购奖励-点击空白处继续": {
+        "recognition": "OCR",
+        "expected": "点击空白处继续",
         "action": "Click",
         "next": [
             "领取采购奖励-确认商店界面出现"
@@ -190,7 +286,9 @@
         "expected": "商店",
         "action": "DoNothing",
         "next": [
-            "返回主界面"
+            "返回主界面",
+            // 可能点快了  还在上一个界面
+            "领取采购奖励-确认获得道具"
         ]
     },
     "送礼物邀约": {
@@ -243,10 +341,18 @@
         "template": "赠送礼物.png",
         "action": "Click",
         "next": [
-            "送礼物-默契提升"
+            "送礼物-确认默契提升"
         ]
     },
-    "送礼物-默契提升": {
+    "送礼物-确认默契提升": {
+        "recognition": "OCR",
+        "expected": "默契提升",
+        "action": "DoNothing",
+        "next": [
+            "邀约-点击默契提升"
+        ]
+    },
+    "邀约-点击默契提升": {
         "recognition": "OCR",
         "expected": "默契提升",
         "action": "Click",
@@ -401,12 +507,14 @@
         "recognition": "OCR",
         "expected": "默契提升",
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "邀约-确认邮寄按钮出现"
         ]
     },
     "邀约-点击退出邀约按钮": {
         "recognition": "TemplateMatch",
+        // 点的太快了 可能没退出去要做检查
         "template": "退出邀约按钮.png",
         "action": "Click",
         "next": []
@@ -634,7 +742,7 @@
     },
     "活动刷体力": {
         "recognition": "TemplateMatch",
-        "template": "活动入口.png",
+        "template": "活动入口-2.png",
         "action": "Click",
         "next": [
             "活动刷体力-点击战斗关卡"
