@@ -33,13 +33,6 @@
         "action": "Click",
         "post_delay": 1000
     },
-    "Sub_返回主界面": {
-        "recognition": "TemplateMatch",
-        "template": "返回主界面-2.png",
-        "method": 5,
-        "action": "Click",
-        "post_delay": 2000
-    },
     "返回主界面": {
         "recognition": "TemplateMatch",
         "template": "返回主界面-2.png",
