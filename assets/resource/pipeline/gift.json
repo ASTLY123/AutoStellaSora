@@ -1,0 +1,198 @@
+{
+    "送礼物邀约": {
+        "recognition": "OCR",
+        "expected": "心链",
+        "action": "Click",
+        "next": [
+            "送礼物-点击邮寄"
+        ]
+    },
+    "送礼物-点击邮寄": {
+        "recognition": "OCR",
+        "expected": "邮寄",
+        "action": "Click",
+        "next": [
+            "送礼物-点击角色名称"
+        ]
+    },
+    "送礼物-点击角色名称": {
+        "recognition": "OCR",
+        "expected": "冬香",
+        "action": "Click",
+        "next": [
+            "送礼物-点击礼物"
+        ]
+    },
+    "送礼物-点击礼物": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            680,
+            320,
+            10,
+            10
+        ],
+        "next": [
+            "送礼物-赠送礼物"
+        ]
+    },
+    "送礼物-赠送礼物": {
+        "recognition": "TemplateMatch",
+        "template": "赠送礼物.png",
+        "action": "Click",
+        "next": [
+            "送礼物-确认默契提升"
+        ]
+    },
+    "送礼物-确认默契提升": {
+        "recognition": "OCR",
+        "expected": "默契提升",
+        "action": "Click",
+        "next": [
+            "邀约-点击邀约"
+        ]
+    },
+    "邀约-点击邀约": {
+        "recognition": "TemplateMatch",
+        "template": "邀约按钮-1.png",
+        "action": "Click",
+        "next": [
+            "邀约-点击角色名称"
+        ]
+    },
+    "邀约-点击角色名称": {
+        "recognition": "OCR",
+        "expected": "冬香",
+        "action": "Click",
+        "next": [
+            "邀约-点击邀约按钮2"
+        ]
+    },
+    "邀约-点击邀约按钮2": {
+        "recognition": "TemplateMatch",
+        "template": "邀约按钮-2.png",
+        "action": "Click",
+        "next": [
+            "邀约-处理今日不再提示",
+            "邀约-选择约会地点"
+        ]
+    },
+    "邀约-处理今日不再提示": {
+        "recognition": "OCR",
+        "expected": "今日不再提示",
+        "action": "Click",
+        "next": [
+            "邀约-点击确认邀约"
+        ]
+    },
+    "邀约-点击确认邀约": {
+        "recognition": "TemplateMatch",
+        "template": "确认邀约.png",
+        "action": "Click",
+        "next": [
+            "邀约-选择约会地点"
+        ]
+    },
+    "邀约-选择约会地点": {
+        "recognition": "OCR",
+        "expected": "选择",
+        "threshold": 0.8,
+        "action": "Click",
+        "index": -1,
+        "next": [
+            "邀约-确认默契值出现"
+        ]
+    },
+    "邀约-确认默契值出现": {
+        "recognition": "OCR",
+        "expected": "默契值",
+        "action": "Click",
+        "next": [
+            "邀约-点击跳过按钮"
+        ]
+    },
+    "邀约-点击跳过按钮": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            1182,
+            72,
+            10,
+            10
+        ],
+        "next": [
+            "邀约-送出礼物按钮"
+        ]
+    },
+    "邀约-送出礼物按钮": {
+        "recognition": "TemplateMatch",
+        "template": "送出礼物按钮.png",
+        "action": "Click",
+        "next": [
+            "邀约-选择礼物"
+        ]
+    },
+    "邀约-选择礼物": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            796,
+            286,
+            10,
+            10
+        ],
+        "next": [
+            "邀约-送出礼物按钮2"
+        ]
+    },
+    "邀约-送出礼物按钮2": {
+        "recognition": "TemplateMatch",
+        "template": "送出礼物按钮-2.png",
+        "action": "Click",
+        "next": [
+            "邀约-领取回礼Hub"
+        ]
+    },
+    "邀约-领取回礼Hub": {
+        "recognition": "DirectHit",
+        "pre_wait_freezes": 3000,
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]邀约-处理获得回礼",
+            "[JumpBack]邀约-处理默契提升",
+            "邀约-确认邮寄按钮出现"
+        ]
+    },
+    "邀约-处理获得回礼": {
+        "recognition": "OCR",
+        "expected": "获得回礼",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "邀约-领取回礼Hub"
+        ]
+    },
+    "邀约-处理默契提升": {
+        "recognition": "OCR",
+        "expected": "默契提升",
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "邀约-领取回礼Hub"
+        ]
+    },
+    "邀约-确认邮寄按钮出现": {
+        "recognition": "OCR",
+        "expected": "邮寄",
+        "action": "DoNothing",
+        "next": [
+            "邀约-点击退出邀约按钮"
+        ]
+    },
+    "邀约-点击退出邀约按钮": {
+        "recognition": "TemplateMatch",
+        "template": "退出邀约按钮.png",
+        "action": "Click"
+    }
+}

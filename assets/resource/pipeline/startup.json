@@ -1,0 +1,104 @@
+{
+    "进入游戏": {
+        "recognition": "OCR",
+        "action": "Click",
+        "expected": "星塔旅人",
+        "post_delay": 40000,
+        "next": [
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-弹窗清理Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭公告",
+            "[JumpBack]Sub_关闭签到",
+            "[JumpBack]Sub_关闭活动",
+            "[JumpBack]进入游戏-处理点击任意区域进入",
+            "[JumpBack]进入游戏-处理点击任意位置领取",
+            "[JumpBack]进入游戏-处理公告界面",
+            "[JumpBack]进入游戏-处理签到界面",
+            "[JumpBack]进入游戏-处理活动界面",
+            "进入游戏-检查到达主界面"
+        ]
+    },
+    "进入游戏-处理点击任意区域进入": {
+        "recognition": "TemplateMatch",
+        "template": "点击任意区域进入游戏.png",
+        "action": "Click",
+        "post_delay": 8000,
+        "next": [
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-处理点击任意位置领取": {
+        "recognition": "OCR",
+        "expected": "点击任意位置领取奖励",
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-处理公告界面": {
+        "recognition": "OCR",
+        "expected": "系统公告",
+        "action": "DoNothing",
+        "next": [
+            "Sub_关闭公告",
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-处理签到界面": {
+        "recognition": "TemplateMatch",
+        "template": "确认签到界面.png",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "target": "进入游戏-处理签到界面"
+        },
+        "next": [
+            "Sub_关闭签到",
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-处理活动界面": {
+        "recognition": "TemplateMatch",
+        "template": "活动界面-活动期内不再弹出.png",
+        "action": "Click",
+        "next": [
+            "Sub_关闭活动",
+            "进入游戏-弹窗清理Hub"
+        ]
+    },
+    "进入游戏-检查到达主界面": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 3000,
+            "threshold": 0.95
+        },
+        "timeout": 60000,
+        "on_error": [
+            "进入游戏-超时兜底点击"
+        ]
+    },
+    "进入游戏-超时兜底点击": {
+        "recognition": "DirectHit",
+        "action": "Click",
+        "target": [
+            640,
+            360,
+            10,
+            10
+        ],
+        "post_delay": 3000,
+        "next": [
+            "进入游戏-弹窗清理Hub"
+        ]
+    }
+}
