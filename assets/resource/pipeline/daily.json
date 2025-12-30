@@ -49,8 +49,38 @@
         "expected": "键领取",
         "action": "DoNothing",
         "next": [
-            "返回主界面"
+            "领取委托-返回主界面"
         ]
+    },
+    "领取委托-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "领取委托-清理弹窗Hub"
+        ]
+    },
+    "领取委托-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "领取委托-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "领取委托-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "领取采购奖励": {
         "recognition": "TemplateMatch",
@@ -82,8 +112,38 @@
         "expected": "商店",
         "action": "DoNothing",
         "next": [
-            "返回主界面"
+            "领取采购奖励-返回主界面"
         ]
+    },
+    "领取采购奖励-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "领取采购奖励-清理弹窗Hub"
+        ]
+    },
+    "领取采购奖励-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "领取采购奖励-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "领取采购奖励-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "领取好友体力": {
         "recognition": "TemplateMatch",
@@ -123,8 +183,38 @@
         "expected": "键赠送",
         "action": "Click",
         "next": [
-            "返回主界面"
+            "领取好友体力-返回主界面"
         ]
+    },
+    "领取好友体力-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "领取好友体力-清理弹窗Hub"
+        ]
+    },
+    "领取好友体力-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "领取好友体力-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "领取好友体力-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "每日奖励": {
         "recognition": "OCR",
@@ -148,8 +238,38 @@
         "next": [
             "[JumpBack]Sub_点击空白处继续",
             "[JumpBack]每日奖励-领取点数奖励",
-            "返回主界面"
+            "每日奖励-返回主界面"
         ]
+    },
+    "每日奖励-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "每日奖励-清理弹窗Hub"
+        ]
+    },
+    "每日奖励-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "每日奖励-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "每日奖励-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "每日奖励-领取点数奖励": {
         "recognition": "TemplateMatch",
@@ -205,7 +325,37 @@
         "expected": "营业目标",
         "action": "DoNothing",
         "next": [
-            "返回主界面"
+            "基金-返回主界面"
         ]
+    },
+    "基金-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "基金-清理弹窗Hub"
+        ]
+    },
+    "基金-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "基金-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "基金-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     }
 }

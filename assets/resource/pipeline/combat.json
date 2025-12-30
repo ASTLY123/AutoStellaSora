@@ -12,12 +12,27 @@
         "expected": "悬赏试炼",
         "action": "Click",
         "next": [
+            "常规刷体力-选择试炼类型"
+        ]
+    },
+    "常规刷体力-选择试炼类型": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
             "常规刷体力-点击基础试炼"
         ]
     },
     "常规刷体力-点击基础试炼": {
         "recognition": "OCR",
         "expected": "基础试炼",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击出发"
+        ]
+    },
+    "常规刷体力-点击纹章试炼": {
+        "recognition": "OCR",
+        "expected": "纹章试炼",
         "action": "Click",
         "next": [
             "常规刷体力-点击出发"
@@ -60,8 +75,38 @@
         "expected": "战斗完成",
         "action": "Click",
         "next": [
-            "返回主界面"
+            "常规刷体力-返回主界面"
         ]
+    },
+    "常规刷体力-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "常规刷体力-清理弹窗Hub"
+        ]
+    },
+    "常规刷体力-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "常规刷体力-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "常规刷体力-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     },
     "活动刷体力": {
         "recognition": "TemplateMatch",
@@ -92,6 +137,15 @@
         "template": "体力最大.png",
         "action": "Click",
         "next": [
+            "活动刷体力-点击普通关卡"
+        ]
+    },
+    // 可能需要先点击一下 “普通”
+    "活动刷体力-点击普通关卡": {
+        "recognition": "OCR",
+        "expected": "普通",
+        "action": "Click",
+        "next": [
             "活动刷体力-开始战斗"
         ]
     },
@@ -108,7 +162,37 @@
         "expected": "战斗完成",
         "action": "Click",
         "next": [
-            "返回主界面"
+            "活动刷体力-返回主界面"
         ]
+    },
+    "活动刷体力-返回主界面": {
+        "recognition": "TemplateMatch",
+        "template": "返回主界面-2.png",
+        "method": 5,
+        "action": "Click",
+        "post_delay": 3000,
+        "next": [
+            "活动刷体力-清理弹窗Hub"
+        ]
+    },
+    "活动刷体力-清理弹窗Hub": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "next": [
+            "[JumpBack]Sub_点击空白处继续",
+            "[JumpBack]Sub_获得道具",
+            "[JumpBack]Sub_关闭活动",
+            "活动刷体力-确认返回完成"
+        ],
+        "timeout": 15000
+    },
+    "活动刷体力-确认返回完成": {
+        "recognition": "OCR",
+        "expected": "委托",
+        "action": "DoNothing",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        }
     }
 }

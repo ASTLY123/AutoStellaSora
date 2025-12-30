@@ -62,7 +62,7 @@
         "expected": "委托",
         "action": "DoNothing",
         "pre_wait_freezes": {
-            "time": 2000,
+            "time": 1000,
             "threshold": 0.95
         }
     },

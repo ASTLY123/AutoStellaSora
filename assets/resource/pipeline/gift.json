@@ -10,9 +10,19 @@
     "送礼物-点击邮寄": {
         "recognition": "OCR",
         "expected": "邮寄",
+        "post_delay": 3000,
         "action": "Click",
         "next": [
-            "送礼物-点击角色名称"
+            "送礼物-确认切换到邮寄界面"
+        ]
+    },
+    "送礼物-确认切换到邮寄界面": {
+        "recognition": "OCR",
+        "expected": "邮递服务",
+        "action": "DoNothing",
+        "next": [
+            "送礼物-点击角色名称",
+            "送礼物-点击邮寄"
         ]
     },
     "送礼物-点击角色名称": {
@@ -47,6 +57,7 @@
     "送礼物-确认默契提升": {
         "recognition": "OCR",
         "expected": "默契提升",
+        "post_wait_freezes": 2000,
         "action": "Click",
         "next": [
             "邀约-点击邀约"
@@ -62,6 +73,7 @@
     },
     "邀约-点击角色名称": {
         "recognition": "OCR",
+        "pre_wait_freezes": 1000,
         "expected": "冬香",
         "action": "Click",
         "next": [
@@ -96,7 +108,7 @@
     "邀约-选择约会地点": {
         "recognition": "OCR",
         "expected": "选择",
-        "threshold": 0.8,
+        "threshold": 0.6,
         "action": "Click",
         "index": -1,
         "next": [
@@ -148,6 +160,7 @@
     "邀约-送出礼物按钮2": {
         "recognition": "TemplateMatch",
         "template": "送出礼物按钮-2.png",
+        "post_delay": 3000,
         "action": "Click",
         "next": [
             "邀约-领取回礼Hub"
@@ -155,13 +168,16 @@
     },
     "邀约-领取回礼Hub": {
         "recognition": "DirectHit",
-        "pre_wait_freezes": 3000,
+        // 没起作用
+        // "pre_wait_freezes": 3000,
+        // "pre_delay": 3000,
         "action": "DoNothing",
         "next": [
             "[JumpBack]Sub_点击空白处继续",
             "[JumpBack]邀约-处理获得回礼",
             "[JumpBack]邀约-处理默契提升",
-            "邀约-确认邮寄按钮出现"
+            "邀约-确认今日已邀约出现",
+            "返回主界面-检查成功"
         ]
     },
     "邀约-处理获得回礼": {
@@ -182,9 +198,21 @@
             "邀约-领取回礼Hub"
         ]
     },
-    "邀约-确认邮寄按钮出现": {
+    "邀约-确认今日已邀约出现": {
         "recognition": "OCR",
-        "expected": "邮寄",
+        "pre_wait_freezes": 2000,
+        "expected": "今日已邀约",
+        "action": "DoNothing",
+        "next": [
+            "邀约-确认今日已邀约出现-2",
+            "邀约-领取回礼Hub"
+        ]
+    },
+    // 确认两遍
+    "邀约-确认今日已邀约出现-2": {
+        "recognition": "OCR",
+        "pre_wait_freezes": 2000,
+        "expected": "今日已邀约",
         "action": "DoNothing",
         "next": [
             "邀约-点击退出邀约按钮"
@@ -193,6 +221,7 @@
     "邀约-点击退出邀约按钮": {
         "recognition": "TemplateMatch",
         "template": "退出邀约按钮.png",
+        "post_wait_freezes": 1000,
         "action": "Click"
     }
 }
