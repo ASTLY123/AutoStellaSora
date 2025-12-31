@@ -10,7 +10,7 @@
     "送礼物-点击邮寄": {
         "recognition": "OCR",
         "expected": "邮寄",
-        "post_delay": 3000,
+        "pre_delay": 2000,
         "action": "Click",
         "next": [
             "送礼物-确认切换到邮寄界面"
@@ -21,7 +21,9 @@
         "expected": "邮递服务",
         "action": "DoNothing",
         "next": [
-            "送礼物-点击角色名称",
+            "送礼物-点击角色名称"
+        ],
+        "on_error": [
             "送礼物-点击邮寄"
         ]
     },
