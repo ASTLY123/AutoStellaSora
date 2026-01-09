@@ -31,10 +31,7 @@
         "recognition": "TemplateMatch",
         "template": "委托额外奖励-检查跳过按钮.png",
         "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "领取委托-委托额外奖励Hub"
-        ]
+        "post_delay": 2000
     },
     "领取委托-确认再次派遣出现": {
         "recognition": "OCR",
@@ -73,7 +70,6 @@
         ],
         "timeout": 15000
     },
-    // TODO 这里返回完成后又进 领取委托-清理弹窗Hub 了 有问题
     "领取委托-确认返回完成": {
         "recognition": "OCR",
         "expected": "委托",
@@ -239,8 +235,8 @@
         "next": [
             "[JumpBack]Sub_点击空白处继续",
             "[JumpBack]每日奖励-领取点数奖励",
-            "每日奖励-返回主界面",
-            "每日奖励-确认返回完成"
+            "每日奖励-确认返回完成",
+            "[JumpBack]每日奖励-返回主界面"
         ]
     },
     "每日奖励-返回主界面": {
@@ -248,25 +244,8 @@
         "template": "返回主界面-2.png",
         "method": 5,
         "action": "Click",
-        "post_delay": 3000,
-        "next": [
-            "每日奖励-清理弹窗Hub"
-        ]
+        "post_delay": 3000
     },
-    "每日奖励-清理弹窗Hub": {
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "next": [
-            "[JumpBack]Sub_点击空白处继续",
-            "[JumpBack]Sub_获得道具",
-            "[JumpBack]Sub_关闭活动",
-            "每日奖励-确认返回完成"
-        ],
-        "timeout": 15000
-    },
-    // TODO 这里又返回清理弹窗hub 了 有问题
-    // 在上一级领取hub中也判断了一次 确认返回完成 明天测试一下是否能正常退出
-    // 现在虽然正常返回了 但是走了两遍领取hub
     "每日奖励-确认返回完成": {
         "recognition": "OCR",
         "expected": "委托",
@@ -321,10 +300,7 @@
             10,
             10
         ],
-        "post_delay": 1000,
-        "next": [
-            "基金-领取Hub"
-        ]
+        "post_delay": 1000
     },
     "基金-确认营业目标": {
         "recognition": "OCR",
@@ -355,7 +331,6 @@
         ],
         "timeout": 15000
     },
-    // TODO 这之后又返回基金领取HUB 了 有问题
     "基金-确认返回完成": {
         "recognition": "OCR",
         "expected": "委托",
