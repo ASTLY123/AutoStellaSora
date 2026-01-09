@@ -13,9 +13,21 @@
         "action": "DoNothing",
         "next": [
             "[JumpBack]进入游戏-检查更新提示",
-            "[JumpBack]进入游戏-处理点击任意区域进入",
-            "进入游戏-等待加载"
+            "[JumpBack]进入游戏-更新资源中",
+            "进入游戏-检查到点击任意区域进入游戏",
+            "[JumpBack]进入游戏-等待加载"
         ]
+    },
+    "进入游戏-等待加载": {
+        "recognition": "DirectHit",
+        "action": "DoNothing",
+        "post_delay": 20000
+    },
+    "进入游戏-更新资源中": {
+        "recognition": "OCR",
+        "expected": "更新资源中",
+        "action": "DoNothing",
+        "post_delay": 20000
     },
     "进入游戏-检查更新提示": {
         "recognition": "OCR",
@@ -29,30 +41,16 @@
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
-        "post_delay": 3000,
-        "next": [
-            "进入游戏-等待更新完成"
-        ]
+        "post_delay": 3000
     },
-    "进入游戏-等待更新完成": {
+    "进入游戏-检查到点击任意区域进入游戏": {
         "recognition": "OCR",
-        "expected": "本次更新文件",
+        "expected": "点击任意区域进入游戏",
         "action": "DoNothing",
-        "inverse": true,
-        "timeout": 120000,
         "next": [
-            "进入游戏-等待加载"
+            "进入游戏-处理点击任意区域进入"
         ]
     },
-    "进入游戏-等待加载": {
-        "recognition": "DirectHit",
-        "action": "DoNothing",
-        "post_delay": 20000,
-        "next": [
-            "进入游戏-弹窗清理Hub"
-        ]
-    },
-    // 检查到 “客服” 两个字 再进行弹窗的判断
     "进入游戏-弹窗清理Hub": {
         "recognition": "DirectHit",
         "action": "DoNothing",
@@ -119,6 +117,7 @@
             "进入游戏-弹窗清理Hub"
         ]
     },
+    // TODO 这里执行了两次 检查成功后又进入了弹窗清理Hub 有问题
     "进入游戏-检查到达主界面": {
         "recognition": "OCR",
         "expected": "委托",
@@ -129,10 +128,10 @@
         },
         "timeout": 60000,
         "on_error": [
-            "进入游戏-超时兜底点击"
+            "进入游戏-超时点击"
         ]
     },
-    "进入游戏-超时兜底点击": {
+    "进入游戏-超时点击": {
         "recognition": "DirectHit",
         "action": "Click",
         "target": [

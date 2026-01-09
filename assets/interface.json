@@ -70,7 +70,10 @@
         },
         {
             "name": "6.常规刷体力",
-            "entry": "常规刷体力"
+            "entry": "常规刷体力",
+            "option": [
+                "试炼类型"
+            ]
         },
         {
             "name": "7.每日奖励",
@@ -82,5 +85,53 @@
             "entry": "基金-领取大月卡",
             "default_check": true
         }
-    ]
+    ],
+    "option": {
+        "试炼类型": {
+            "type": "select",
+            "label": "选择试炼类型",
+            "description": "选择要刷的试炼关卡类型",
+            "default_case": "基础试炼",
+            "cases": [
+                {
+                    "name": "基础试炼",
+                    "label": "基础试炼",
+                    "description": "刷基础试炼关卡",
+                    "pipeline_override": {
+                        "常规刷体力-选择试炼类型": {
+                            "next": [
+                                "常规刷体力-点击基础试炼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "纹章试炼-帝国卫队",
+                    // TODO 还有 地理协会 恩赐意志
+                    "label": "纹章试炼",
+                    "description": "刷纹章试炼关卡",
+                    "pipeline_override": {
+                        "常规刷体力-选择试炼类型": {
+                            "next": [
+                                "常规刷体力-点击纹章试炼"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "技巧试炼-射击游戏卡带",
+                    // TODO 还有 节奏游戏卡带 格斗游戏卡带
+                    "label": "技巧试炼",
+                    "description": "刷技巧试炼关卡",
+                    "pipeline_override": {
+                        "常规刷体力-选择试炼类型": {
+                            "next": [
+                                "常规刷体力-点击技巧试炼"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
+    }
 }

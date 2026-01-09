@@ -38,9 +38,47 @@
             "常规刷体力-点击出发"
         ]
     },
+    "常规刷体力-点击技巧试炼": {
+        "recognition": "OCR",
+        "expected": "技巧试炼",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧试炼-点击出发"
+        ]
+    },
     "常规刷体力-点击出发": {
         "recognition": "OCR",
         "expected": "出发",
+        // "pre_wait_freezes": {
+        //     "time": 1000,
+        //     "threshold": 0.95
+        // },
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击帝国卫队"
+        ]
+    },
+    "常规刷体力-点击帝国卫队": {
+        "recognition": "OCR",
+        "expected": "帝国卫队",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击快速战斗"
+        ]
+    },
+    "常规刷体力-技巧试炼-点击出发": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击射击游戏"
+        ]
+    },
+    "常规刷体力-点击射击游戏": {
+        "recognition": "OCR",
+        "expected": "射击游戏",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "常规刷体力-点击快速战斗"
@@ -49,6 +87,7 @@
     "常规刷体力-点击快速战斗": {
         "recognition": "OCR",
         "expected": "快速战斗",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "常规刷体力-点击体力最大按钮"
@@ -65,6 +104,7 @@
     "常规刷体力-开始战斗": {
         "recognition": "OCR",
         "expected": "开始战斗",
+        "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
             "常规刷体力-确认战斗完成"
@@ -73,7 +113,17 @@
     "常规刷体力-确认战斗完成": {
         "recognition": "OCR",
         "expected": "战斗完成",
+        "post_wait_freezes": 1000,
         "action": "Click",
+        "next": [
+            "常规刷体力-点击确认"
+        ]
+    },
+    "常规刷体力-点击确认": {
+        "recognition": "OCR",
+        "expected": "确认",
+        "action": "Click",
+        "post_wait_freezes": 1000,
         "next": [
             "常规刷体力-返回主界面"
         ]
@@ -92,10 +142,8 @@
         "recognition": "DirectHit",
         "action": "DoNothing",
         "next": [
-            "[JumpBack]Sub_点击空白处继续",
-            "[JumpBack]Sub_获得道具",
-            "[JumpBack]Sub_关闭活动",
-            "常规刷体力-确认返回完成"
+            "常规刷体力-确认返回完成",
+            "常规刷体力-返回主界面"
         ],
         "timeout": 15000
     },

@@ -3,6 +3,7 @@
         "recognition": "OCR",
         "expected": "心链",
         "action": "Click",
+        "post_delay": 2000,
         "next": [
             "送礼物-点击邮寄"
         ]
@@ -59,7 +60,8 @@
     "送礼物-确认默契提升": {
         "recognition": "OCR",
         "expected": "默契提升",
-        "post_wait_freezes": 2000,
+        "pre_delay": 3000,
+        "post_delay": 1000,
         "action": "Click",
         "next": [
             "邀约-点击邀约"
@@ -68,6 +70,10 @@
     "邀约-点击邀约": {
         "recognition": "TemplateMatch",
         "template": "邀约按钮-1.png",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "next": [
             "邀约-点击角色名称"
@@ -141,6 +147,7 @@
     "邀约-送出礼物按钮": {
         "recognition": "TemplateMatch",
         "template": "送出礼物按钮.png",
+        "post_delay": 2000,
         "action": "Click",
         "next": [
             "邀约-选择礼物"
