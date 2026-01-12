@@ -259,10 +259,7 @@
         "recognition": "TemplateMatch",
         "template": "领取按钮-每日.png",
         "action": "Click",
-        "post_delay": 2000,
-        "next": [
-            "每日奖励-领取Hub"
-        ]
+        "post_delay": 2000
     },
     "基金-领取大月卡": {
         "recognition": "OCR",
