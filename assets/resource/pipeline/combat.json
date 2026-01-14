@@ -158,7 +158,7 @@
     },
     "活动刷体力": {
         "recognition": "TemplateMatch",
-        "template": "活动入口-2.png",
+        "template": "活动入口.png",
         "action": "Click",
         "next": [
             "活动刷体力-点击战斗关卡"

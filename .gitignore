@@ -1,3 +1,16 @@
+# local
+sample/
+.claude/
+CLAUDE.md
+GEMINI.md
+AGENTS.md
+copilot-instructions.md
+MFAAvalonia-v2.2.7-win-x64/
+question_record/
+plan/
+
+
+/ServiceFabricBackup
 # docs
 docs/node_modules
 docs/.vuepress/.temp
