@@ -6,7 +6,10 @@
         "post_delay": 25000,
         "next": [
             "进入游戏-等待加载完成Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "进入游戏"
+        }
     },
     "进入游戏-等待加载完成Hub": {
         "recognition": "DirectHit",
@@ -16,18 +19,27 @@
             "[JumpBack]进入游戏-更新资源中",
             "进入游戏-检查到点击任意区域进入游戏",
             "[JumpBack]进入游戏-等待加载"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "等待加载完成Hub"
+        }
     },
     "进入游戏-等待加载": {
         "recognition": "DirectHit",
         "action": "DoNothing",
-        "post_delay": 20000
+        "post_delay": 20000,
+        "focus": {
+            "Node.Action.Starting": "等待加载"
+        }
     },
     "进入游戏-更新资源中": {
         "recognition": "OCR",
         "expected": "更新资源中",
         "action": "DoNothing",
-        "post_delay": 20000
+        "post_delay": 20000,
+        "focus": {
+            "Node.Action.Starting": "更新资源中"
+        }
     },
     "进入游戏-检查更新提示": {
         "recognition": "OCR",
@@ -35,13 +47,19 @@
         "action": "DoNothing",
         "next": [
             "进入游戏-点击更新确定"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "检查更新提示"
+        }
     },
     "进入游戏-点击更新确定": {
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
-        "post_delay": 3000
+        "post_delay": 3000,
+        "focus": {
+            "Node.Action.Starting": "点击更新确定"
+        }
     },
     "进入游戏-检查到点击任意区域进入游戏": {
         "recognition": "OCR",
@@ -49,7 +67,10 @@
         "action": "DoNothing",
         "next": [
             "进入游戏-处理点击任意区域进入"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "检查到点击任意区域进入游戏"
+        }
     },
     "进入游戏-弹窗清理Hub": {
         "recognition": "DirectHit",
@@ -66,12 +87,18 @@
             "[JumpBack]进入游戏-处理签到界面",
             "[JumpBack]进入游戏-处理活动界面",
             "进入游戏-检查到达主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "弹窗清理Hub"
+        }
     },
     "弹窗清理-处理点击任意区域进入": {
         "recognition": "OCR",
         "expected": "点击任意区域进入游戏",
-        "action": "Click"
+        "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "处理点击任意区域进入"
+        }
     },
     "进入游戏-处理点击任意区域进入": {
         "recognition": "TemplateMatch",
@@ -80,7 +107,10 @@
         "post_delay": 8000,
         "next": [
             "进入游戏-弹窗清理Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理点击任意区域进入"
+        }
     },
     "进入游戏-处理点击任意位置领取": {
         "recognition": "OCR",
@@ -89,7 +119,10 @@
         "post_delay": 2000,
         "next": [
             "进入游戏-弹窗清理Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理点击任意位置领取"
+        }
     },
     "进入游戏-处理公告界面": {
         "recognition": "OCR",
@@ -97,7 +130,10 @@
         "action": "DoNothing",
         "next": [
             "Sub_关闭公告"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理公告界面"
+        }
     },
     "进入游戏-处理签到界面": {
         "recognition": "TemplateMatch",
@@ -109,7 +145,10 @@
         },
         "next": [
             "Sub_关闭签到"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理签到界面"
+        }
     },
     "进入游戏-处理活动界面": {
         "recognition": "TemplateMatch",
@@ -117,7 +156,10 @@
         "action": "Click",
         "next": [
             "Sub_关闭活动"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理活动界面"
+        }
     },
     "进入游戏-检查到达主界面": {
         "recognition": "OCR",
@@ -130,7 +172,10 @@
         "timeout": 60000,
         "on_error": [
             "进入游戏-超时点击"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "检查到达主界面"
+        }
     },
     "进入游戏-超时点击": {
         "recognition": "DirectHit",
@@ -144,6 +189,9 @@
         "post_delay": 3000,
         "next": [
             "进入游戏-弹窗清理Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "超时点击"
+        }
     }
 }

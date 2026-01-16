@@ -6,7 +6,10 @@
         "post_delay": 2000,
         "next": [
             "送礼物-点击邮寄"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "送礼物邀约"
+        }
     },
     "送礼物-点击邮寄": {
         "recognition": "OCR",
@@ -15,7 +18,10 @@
         "action": "Click",
         "next": [
             "送礼物-确认切换到邮寄界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击邮寄"
+        }
     },
     "送礼物-确认切换到邮寄界面": {
         "recognition": "OCR",
@@ -26,7 +32,10 @@
         ],
         "on_error": [
             "送礼物-点击邮寄"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认切换到邮寄界面"
+        }
     },
     "送礼物-点击角色名称": {
         "recognition": "OCR",
@@ -34,7 +43,10 @@
         "action": "Click",
         "next": [
             "送礼物-点击礼物"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击角色名称"
+        }
     },
     "送礼物-点击礼物": {
         "recognition": "DirectHit",
@@ -47,7 +59,10 @@
         ],
         "next": [
             "送礼物-赠送礼物"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击礼物"
+        }
     },
     "送礼物-赠送礼物": {
         "recognition": "TemplateMatch",
@@ -55,7 +70,10 @@
         "action": "Click",
         "next": [
             "送礼物-确认默契提升"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "赠送礼物"
+        }
     },
     "送礼物-确认默契提升": {
         "recognition": "OCR",
@@ -65,7 +83,10 @@
         "action": "Click",
         "next": [
             "邀约-点击邀约"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认默契提升"
+        }
     },
     "邀约-点击邀约": {
         "recognition": "TemplateMatch",
@@ -77,7 +98,10 @@
         "action": "Click",
         "next": [
             "邀约-点击角色名称"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击邀约"
+        }
     },
     "邀约-点击角色名称": {
         "recognition": "OCR",
@@ -86,7 +110,10 @@
         "action": "Click",
         "next": [
             "邀约-点击邀约按钮2"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击角色名称"
+        }
     },
     "邀约-点击邀约按钮2": {
         "recognition": "TemplateMatch",
@@ -95,7 +122,10 @@
         "next": [
             "邀约-处理今日不再提示",
             "邀约-选择约会地点"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击邀约按钮2"
+        }
     },
     "邀约-处理今日不再提示": {
         "recognition": "OCR",
@@ -103,7 +133,10 @@
         "action": "Click",
         "next": [
             "邀约-点击确认邀约"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理今日不再提示"
+        }
     },
     "邀约-点击确认邀约": {
         "recognition": "TemplateMatch",
@@ -111,7 +144,10 @@
         "action": "Click",
         "next": [
             "邀约-选择约会地点"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击确认邀约"
+        }
     },
     "邀约-选择约会地点": {
         "recognition": "OCR",
@@ -121,7 +157,10 @@
         "index": -1,
         "next": [
             "邀约-确认默契值出现"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "选择约会地点"
+        }
     },
     "邀约-确认默契值出现": {
         "recognition": "OCR",
@@ -129,7 +168,10 @@
         "action": "Click",
         "next": [
             "邀约-点击跳过按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认默契值出现"
+        }
     },
     "邀约-点击跳过按钮": {
         "recognition": "DirectHit",
@@ -142,7 +184,10 @@
         ],
         "next": [
             "邀约-送出礼物按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击跳过按钮"
+        }
     },
     "邀约-送出礼物按钮": {
         "recognition": "TemplateMatch",
@@ -151,7 +196,10 @@
         "action": "Click",
         "next": [
             "邀约-选择礼物"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "送出礼物按钮"
+        }
     },
     "邀约-选择礼物": {
         "recognition": "DirectHit",
@@ -164,7 +212,10 @@
         ],
         "next": [
             "邀约-送出礼物按钮2"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "选择礼物"
+        }
     },
     "邀约-送出礼物按钮2": {
         "recognition": "TemplateMatch",
@@ -173,13 +224,13 @@
         "action": "Click",
         "next": [
             "邀约-领取回礼Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "送出礼物按钮2"
+        }
     },
     "邀约-领取回礼Hub": {
         "recognition": "DirectHit",
-        // 没起作用
-        // "pre_wait_freezes": 3000,
-        // "pre_delay": 3000,
         "action": "DoNothing",
         "next": [
             "[JumpBack]Sub_点击空白处继续",
@@ -187,7 +238,10 @@
             "[JumpBack]邀约-处理默契提升",
             "邀约-确认今日已邀约出现",
             "返回主界面-检查成功"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取回礼Hub"
+        }
     },
     "邀约-处理获得回礼": {
         "recognition": "OCR",
@@ -196,7 +250,10 @@
         "post_delay": 1000,
         "next": [
             "邀约-领取回礼Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理获得回礼"
+        }
     },
     "邀约-处理默契提升": {
         "recognition": "OCR",
@@ -205,7 +262,10 @@
         "post_delay": 1000,
         "next": [
             "邀约-领取回礼Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "处理默契提升"
+        }
     },
     "邀约-确认今日已邀约出现": {
         "recognition": "OCR",
@@ -215,9 +275,11 @@
         "next": [
             "邀约-确认今日已邀约出现-2",
             "邀约-领取回礼Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认今日已邀约出现"
+        }
     },
-    // 确认两遍
     "邀约-确认今日已邀约出现-2": {
         "recognition": "OCR",
         "pre_wait_freezes": 2000,
@@ -225,12 +287,18 @@
         "action": "DoNothing",
         "next": [
             "邀约-点击退出邀约按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认今日已邀约出现-2"
+        }
     },
     "邀约-点击退出邀约按钮": {
         "recognition": "TemplateMatch",
         "template": "退出邀约按钮.png",
         "post_wait_freezes": 1000,
-        "action": "Click"
+        "action": "Click",
+        "focus": {
+            "Node.Action.Starting": "点击退出邀约按钮"
+        }
     }
 }

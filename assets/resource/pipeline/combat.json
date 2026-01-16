@@ -5,7 +5,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击悬赏试炼"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "常规刷体力"
+        }
     },
     "常规刷体力-点击悬赏试炼": {
         "recognition": "OCR",
@@ -13,14 +16,20 @@
         "action": "Click",
         "next": [
             "常规刷体力-选择试炼类型"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击悬赏试炼"
+        }
     },
     "常规刷体力-选择试炼类型": {
         "recognition": "DirectHit",
         "action": "DoNothing",
         "next": [
             "常规刷体力-点击基础试炼"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "选择试炼类型"
+        }
     },
     "常规刷体力-点击基础试炼": {
         "recognition": "OCR",
@@ -28,7 +37,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击出发"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击基础试炼"
+        }
     },
     "常规刷体力-点击纹章试炼": {
         "recognition": "OCR",
@@ -36,7 +48,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击出发"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击纹章试炼"
+        }
     },
     "常规刷体力-点击技巧试炼": {
         "recognition": "OCR",
@@ -45,19 +60,21 @@
         "action": "Click",
         "next": [
             "常规刷体力-技巧试炼-点击出发"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击技巧试炼"
+        }
     },
     "常规刷体力-点击出发": {
         "recognition": "OCR",
         "expected": "出发",
-        // "pre_wait_freezes": {
-        //     "time": 1000,
-        //     "threshold": 0.95
-        // },
         "action": "Click",
         "next": [
             "常规刷体力-点击帝国卫队"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击出发"
+        }
     },
     "常规刷体力-点击帝国卫队": {
         "recognition": "OCR",
@@ -65,7 +82,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击快速战斗"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击帝国卫队"
+        }
     },
     "常规刷体力-技巧试炼-点击出发": {
         "recognition": "OCR",
@@ -73,7 +93,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击射击游戏"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "技巧试炼-点击出发"
+        }
     },
     "常规刷体力-点击射击游戏": {
         "recognition": "OCR",
@@ -82,7 +105,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击快速战斗"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击射击游戏"
+        }
     },
     "常规刷体力-点击快速战斗": {
         "recognition": "OCR",
@@ -91,7 +117,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击体力最大按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击快速战斗"
+        }
     },
     "常规刷体力-点击体力最大按钮": {
         "recognition": "TemplateMatch",
@@ -99,7 +128,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-开始战斗"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击体力最大按钮"
+        }
     },
     "常规刷体力-开始战斗": {
         "recognition": "OCR",
@@ -108,7 +140,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-确认战斗完成"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始战斗"
+        }
     },
     "常规刷体力-确认战斗完成": {
         "recognition": "OCR",
@@ -117,7 +152,10 @@
         "action": "Click",
         "next": [
             "常规刷体力-点击确认"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认战斗完成"
+        }
     },
     "常规刷体力-点击确认": {
         "recognition": "OCR",
@@ -126,7 +164,10 @@
         "post_wait_freezes": 1000,
         "next": [
             "常规刷体力-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击确认"
+        }
     },
     "常规刷体力-返回主界面": {
         "recognition": "TemplateMatch",
@@ -136,7 +177,10 @@
         "post_delay": 3000,
         "next": [
             "常规刷体力-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "常规刷体力-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -145,7 +189,10 @@
             "常规刷体力-确认返回完成",
             "常规刷体力-返回主界面"
         ],
-        "timeout": 15000
+        "timeout": 15000,
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "常规刷体力-确认返回完成": {
         "recognition": "OCR",
@@ -154,6 +201,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     },
     "活动刷体力": {
@@ -162,7 +212,10 @@
         "action": "Click",
         "next": [
             "活动刷体力-点击战斗关卡"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "活动刷体力"
+        }
     },
     "活动刷体力-点击战斗关卡": {
         "recognition": "OCR",
@@ -170,7 +223,10 @@
         "action": "Click",
         "next": [
             "活动刷体力-点击普通关卡"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击战斗关卡"
+        }
     },
     "活动刷体力-点击普通关卡": {
         "recognition": "OCR",
@@ -178,7 +234,10 @@
         "action": "Click",
         "next": [
             "活动刷体力-快速战斗"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击普通关卡"
+        }
     },
     "活动刷体力-快速战斗": {
         "recognition": "OCR",
@@ -186,7 +245,10 @@
         "action": "Click",
         "next": [
             "活动刷体力-点击体力最大按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "快速战斗"
+        }
     },
     "活动刷体力-点击体力最大按钮": {
         "recognition": "TemplateMatch",
@@ -194,16 +256,21 @@
         "action": "Click",
         "next": [
             "活动刷体力-开始战斗"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击体力最大按钮"
+        }
     },
-    // 可能需要先点击一下 “普通”
     "活动刷体力-开始战斗": {
         "recognition": "OCR",
         "expected": "开始战斗",
         "action": "Click",
         "next": [
             "活动刷体力-战斗完成"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "开始战斗"
+        }
     },
     "活动刷体力-战斗完成": {
         "recognition": "OCR",
@@ -211,7 +278,10 @@
         "action": "Click",
         "next": [
             "活动刷体力-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "战斗完成"
+        }
     },
     "活动刷体力-返回主界面": {
         "recognition": "TemplateMatch",
@@ -221,7 +291,10 @@
         "post_delay": 3000,
         "next": [
             "活动刷体力-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "活动刷体力-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -235,7 +308,10 @@
         "timeout": 15000,
         "on_error": [
             "活动刷体力-超时兜底点击"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "活动刷体力-超时兜底点击": {
         "recognition": "DirectHit",
@@ -249,7 +325,10 @@
         "post_delay": 3000,
         "next": [
             "活动刷体力-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "超时兜底点击"
+        }
     },
     "活动刷体力-确认返回完成": {
         "recognition": "OCR",
@@ -258,6 +337,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     }
 }

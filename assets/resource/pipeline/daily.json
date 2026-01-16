@@ -5,7 +5,10 @@
         "action": "Click",
         "next": [
             "领取委托-一键收取委托按钮"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取委托"
+        }
     },
     "领取委托-一键收取委托按钮": {
         "recognition": "TemplateMatch",
@@ -15,7 +18,10 @@
         "next": [
             "领取委托-委托额外奖励Hub",
             "领取委托-确认再次派遣出现"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "一键收取委托按钮"
+        }
     },
     "领取委托-委托额外奖励Hub": {
         "recognition": "DirectHit",
@@ -25,13 +31,19 @@
             "[JumpBack]Sub_获得道具",
             "[JumpBack]Sub_点击空白处继续",
             "领取委托-确认再次派遣出现"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "委托额外奖励Hub"
+        }
     },
     "领取委托-处理额外奖励跳过": {
         "recognition": "TemplateMatch",
         "template": "委托额外奖励-检查跳过按钮.png",
         "action": "Click",
-        "post_delay": 2000
+        "post_delay": 2000,
+        "focus": {
+            "Node.Action.Starting": "处理额外奖励跳过"
+        }
     },
     "领取委托-确认再次派遣出现": {
         "recognition": "OCR",
@@ -39,7 +51,10 @@
         "action": "Click",
         "next": [
             "领取委托-确认一键领取出现"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认再次派遣出现"
+        }
     },
     "领取委托-确认一键领取出现": {
         "recognition": "OCR",
@@ -47,7 +62,10 @@
         "action": "DoNothing",
         "next": [
             "领取委托-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认一键领取出现"
+        }
     },
     "领取委托-返回主界面": {
         "recognition": "TemplateMatch",
@@ -57,7 +75,10 @@
         "post_delay": 3000,
         "next": [
             "领取委托-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "领取委托-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -68,7 +89,10 @@
             "[JumpBack]Sub_关闭活动",
             "领取委托-确认返回完成"
         ],
-        "timeout": 15000
+        "timeout": 15000,
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "领取委托-确认返回完成": {
         "recognition": "OCR",
@@ -77,6 +101,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     },
     "领取采购奖励": {
@@ -85,7 +112,10 @@
         "action": "Click",
         "next": [
             "领取采购奖励-点击每日赠礼"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取采购奖励"
+        }
     },
     "领取采购奖励-点击每日赠礼": {
         "recognition": "TemplateMatch",
@@ -93,7 +123,10 @@
         "action": "Click",
         "next": [
             "领取采购奖励-领取奖励Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击每日赠礼"
+        }
     },
     "领取采购奖励-领取奖励Hub": {
         "recognition": "DirectHit",
@@ -102,7 +135,10 @@
             "[JumpBack]Sub_获得道具",
             "[JumpBack]Sub_点击空白处继续",
             "领取采购奖励-确认商店界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取奖励Hub"
+        }
     },
     "领取采购奖励-确认商店界面": {
         "recognition": "OCR",
@@ -110,7 +146,10 @@
         "action": "DoNothing",
         "next": [
             "领取采购奖励-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认商店界面"
+        }
     },
     "领取采购奖励-返回主界面": {
         "recognition": "TemplateMatch",
@@ -120,7 +159,10 @@
         "post_delay": 3000,
         "next": [
             "领取采购奖励-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "领取采购奖励-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -131,7 +173,10 @@
             "[JumpBack]Sub_关闭活动",
             "领取采购奖励-确认返回完成"
         ],
-        "timeout": 15000
+        "timeout": 15000,
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "领取采购奖励-确认返回完成": {
         "recognition": "OCR",
@@ -140,6 +185,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     },
     "领取好友体力": {
@@ -148,7 +196,10 @@
         "action": "Click",
         "next": [
             "领取好友体力-点击好友列表"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取好友体力"
+        }
     },
     "领取好友体力-点击好友列表": {
         "recognition": "OCR",
@@ -156,7 +207,10 @@
         "expected": "好友列表",
         "next": [
             "领取好友体力-点击一键获取"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击好友列表"
+        }
     },
     "领取好友体力-点击一键获取": {
         "recognition": "OCR",
@@ -165,7 +219,10 @@
         "post_delay": 2000,
         "next": [
             "领取好友体力-领取Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击一键获取"
+        }
     },
     "领取好友体力-领取Hub": {
         "recognition": "DirectHit",
@@ -173,7 +230,10 @@
         "next": [
             "[JumpBack]Sub_点击空白处继续",
             "领取好友体力-确认一键赠送"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取Hub"
+        }
     },
     "领取好友体力-确认一键赠送": {
         "recognition": "OCR",
@@ -181,7 +241,10 @@
         "action": "Click",
         "next": [
             "领取好友体力-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认一键赠送"
+        }
     },
     "领取好友体力-返回主界面": {
         "recognition": "TemplateMatch",
@@ -191,7 +254,10 @@
         "post_delay": 3000,
         "next": [
             "领取好友体力-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "领取好友体力-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -202,7 +268,10 @@
             "[JumpBack]Sub_关闭活动",
             "领取好友体力-确认返回完成"
         ],
-        "timeout": 15000
+        "timeout": 15000,
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "领取好友体力-确认返回完成": {
         "recognition": "OCR",
@@ -211,6 +280,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     },
     "每日奖励": {
@@ -219,7 +291,10 @@
         "action": "Click",
         "next": [
             "每日奖励-一键领取"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "每日奖励"
+        }
     },
     "每日奖励-一键领取": {
         "recognition": "OCR",
@@ -227,7 +302,10 @@
         "action": "Click",
         "next": [
             "每日奖励-领取Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "一键领取"
+        }
     },
     "每日奖励-领取Hub": {
         "recognition": "DirectHit",
@@ -237,14 +315,20 @@
             "[JumpBack]每日奖励-领取点数奖励",
             "每日奖励-确认返回完成",
             "[JumpBack]每日奖励-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取Hub"
+        }
     },
     "每日奖励-返回主界面": {
         "recognition": "TemplateMatch",
         "template": "返回主界面-2.png",
         "method": 5,
         "action": "Click",
-        "post_delay": 3000
+        "post_delay": 3000,
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "每日奖励-确认返回完成": {
         "recognition": "OCR",
@@ -253,13 +337,19 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     },
     "每日奖励-领取点数奖励": {
         "recognition": "TemplateMatch",
         "template": "领取按钮-每日.png",
         "action": "Click",
-        "post_delay": 2000
+        "post_delay": 2000,
+        "focus": {
+            "Node.Action.Starting": "领取点数奖励"
+        }
     },
     "基金-领取大月卡": {
         "recognition": "OCR",
@@ -267,7 +357,10 @@
         "action": "Click",
         "next": [
             "基金-全部领取"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取大月卡"
+        }
     },
     "基金-全部领取": {
         "recognition": "OCR",
@@ -276,7 +369,10 @@
         "post_delay": 3000,
         "next": [
             "基金-领取Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "全部领取"
+        }
     },
     "基金-领取Hub": {
         "recognition": "DirectHit",
@@ -285,7 +381,10 @@
             "[JumpBack]基金-处理等级提升",
             "基金-确认营业目标",
             "基金-确认返回完成"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "领取Hub"
+        }
     },
     "基金-处理等级提升": {
         "recognition": "TemplateMatch",
@@ -297,7 +396,10 @@
             10,
             10
         ],
-        "post_delay": 1000
+        "post_delay": 1000,
+        "focus": {
+            "Node.Action.Starting": "处理等级提升"
+        }
     },
     "基金-确认营业目标": {
         "recognition": "OCR",
@@ -305,7 +407,10 @@
         "action": "DoNothing",
         "next": [
             "基金-返回主界面"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认营业目标"
+        }
     },
     "基金-返回主界面": {
         "recognition": "TemplateMatch",
@@ -315,7 +420,10 @@
         "post_delay": 3000,
         "next": [
             "基金-清理弹窗Hub"
-        ]
+        ],
+        "focus": {
+            "Node.Action.Starting": "返回主界面"
+        }
     },
     "基金-清理弹窗Hub": {
         "recognition": "DirectHit",
@@ -326,7 +434,10 @@
             "[JumpBack]Sub_关闭活动",
             "基金-确认返回完成"
         ],
-        "timeout": 15000
+        "timeout": 15000,
+        "focus": {
+            "Node.Action.Starting": "清理弹窗Hub"
+        }
     },
     "基金-确认返回完成": {
         "recognition": "OCR",
@@ -335,6 +446,9 @@
         "pre_wait_freezes": {
             "time": 1000,
             "threshold": 0.95
+        },
+        "focus": {
+            "Node.Action.Starting": "确认返回完成"
         }
     }
 }
