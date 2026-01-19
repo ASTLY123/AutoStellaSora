@@ -104,7 +104,10 @@
         "recognition": "TemplateMatch",
         "template": "点击任意区域进入游戏.png",
         "action": "Click",
-        "post_delay": 8000,
+        "post_wait_freezes": {
+            "time": 8000,
+            "threshold": 0.95
+        },
         "next": [
             "进入游戏-弹窗清理Hub"
         ],
