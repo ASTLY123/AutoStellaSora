@@ -221,7 +221,7 @@
         "recognition": "OCR",
         "expected": "战斗关卡",
         "action": "Click",
-        "pre_wait_freezes": {
+        "post_wait_freezes": {
             "time": 2000,
             "threshold": 0.95
         },
@@ -236,6 +236,10 @@
         "recognition": "OCR",
         "expected": "普通",
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
         "next": [
             "活动刷体力-快速战斗"
         ],
