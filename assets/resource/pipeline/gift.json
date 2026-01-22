@@ -68,6 +68,10 @@
         "recognition": "TemplateMatch",
         "template": "赠送礼物.png",
         "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
         "next": [
             "送礼物-确认默契提升"
         ],
