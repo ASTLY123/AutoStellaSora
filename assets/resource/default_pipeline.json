@@ -1,0 +1,8 @@
+{
+    "Default": {
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        }
+    }
+}
