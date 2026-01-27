@@ -65,6 +65,30 @@
             "Node.Action.Starting": "点击技巧试炼"
         }
     },
+    "常规刷体力-点击技巧试炼-节奏": {
+        "recognition": "OCR",
+        "expected": "技巧试炼",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧试炼节奏-点击出发"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击技巧试炼"
+        }
+    },
+    "常规刷体力-点击技巧试炼-格斗": {
+        "recognition": "OCR",
+        "expected": "技巧试炼",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧试炼格斗-点击出发"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击技巧试炼"
+        }
+    },
     "常规刷体力-点击出发": {
         "recognition": "OCR",
         "expected": "出发",
@@ -98,6 +122,28 @@
             "Node.Action.Starting": "技巧试炼-点击出发"
         }
     },
+    "常规刷体力-技巧试炼节奏-点击出发": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击节奏游戏"
+        ],
+        "focus": {
+            "Node.Action.Starting": "技巧试炼-点击出发"
+        }
+    },
+    "常规刷体力-技巧试炼格斗-点击出发": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击格斗游戏"
+        ],
+        "focus": {
+            "Node.Action.Starting": "技巧试炼-点击出发"
+        }
+    },
     "常规刷体力-点击射击游戏": {
         "recognition": "OCR",
         "expected": "射击游戏",
@@ -108,6 +154,30 @@
         ],
         "focus": {
             "Node.Action.Starting": "点击射击游戏"
+        }
+    },
+    "常规刷体力-点击节奏游戏": {
+        "recognition": "OCR",
+        "expected": "节奏游戏",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击快速战斗"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击节奏游戏"
+        }
+    },
+    "常规刷体力-点击格斗游戏": {
+        "recognition": "OCR",
+        "expected": "格斗游戏",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击快速战斗"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击格斗游戏"
         }
     },
     "常规刷体力-点击快速战斗": {
