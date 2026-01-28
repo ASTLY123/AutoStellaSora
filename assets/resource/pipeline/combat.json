@@ -10,12 +10,78 @@
             "Node.Action.Starting": "常规刷体力"
         }
     },
+    "常规刷体力-技巧射击": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧射击-点击悬赏试炼"
+        ],
+        "focus": {
+            "Node.Action.Starting": "常规刷体力-技巧射击"
+        }
+    },
+    "常规刷体力-技巧节奏": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧节奏-点击悬赏试炼"
+        ],
+        "focus": {
+            "Node.Action.Starting": "常规刷体力-技巧节奏"
+        }
+    },
+    "常规刷体力-技巧格斗": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧格斗-点击悬赏试炼"
+        ],
+        "focus": {
+            "Node.Action.Starting": "常规刷体力-技巧格斗"
+        }
+    },
     "常规刷体力-点击悬赏试炼": {
         "recognition": "OCR",
         "expected": "悬赏试炼",
         "action": "Click",
         "next": [
             "常规刷体力-选择试炼类型"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击悬赏试炼"
+        }
+    },
+    "常规刷体力-技巧射击-点击悬赏试炼": {
+        "recognition": "OCR",
+        "expected": "悬赏试炼",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧射击-点击技巧试炼"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击悬赏试炼"
+        }
+    },
+    "常规刷体力-技巧节奏-点击悬赏试炼": {
+        "recognition": "OCR",
+        "expected": "悬赏试炼",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧节奏-点击技巧试炼"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击悬赏试炼"
+        }
+    },
+    "常规刷体力-技巧格斗-点击悬赏试炼": {
+        "recognition": "OCR",
+        "expected": "悬赏试炼",
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧格斗-点击技巧试炼"
         ],
         "focus": {
             "Node.Action.Starting": "点击悬赏试炼"
@@ -65,25 +131,37 @@
             "Node.Action.Starting": "点击技巧试炼"
         }
     },
-    "常规刷体力-点击技巧试炼-节奏": {
+    "常规刷体力-技巧射击-点击技巧试炼": {
         "recognition": "OCR",
         "expected": "技巧试炼",
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
-            "常规刷体力-技巧试炼节奏-点击出发"
+            "常规刷体力-技巧射击-点击出发"
         ],
         "focus": {
             "Node.Action.Starting": "点击技巧试炼"
         }
     },
-    "常规刷体力-点击技巧试炼-格斗": {
+    "常规刷体力-技巧节奏-点击技巧试炼": {
         "recognition": "OCR",
         "expected": "技巧试炼",
         "post_wait_freezes": 1000,
         "action": "Click",
         "next": [
-            "常规刷体力-技巧试炼格斗-点击出发"
+            "常规刷体力-技巧节奏-点击出发"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击技巧试炼"
+        }
+    },
+    "常规刷体力-技巧格斗-点击技巧试炼": {
+        "recognition": "OCR",
+        "expected": "技巧试炼",
+        "post_wait_freezes": 1000,
+        "action": "Click",
+        "next": [
+            "常规刷体力-技巧格斗-点击出发"
         ],
         "focus": {
             "Node.Action.Starting": "点击技巧试炼"
@@ -122,7 +200,18 @@
             "Node.Action.Starting": "技巧试炼-点击出发"
         }
     },
-    "常规刷体力-技巧试炼节奏-点击出发": {
+    "常规刷体力-技巧射击-点击出发": {
+        "recognition": "OCR",
+        "expected": "出发",
+        "action": "Click",
+        "next": [
+            "常规刷体力-点击射击游戏"
+        ],
+        "focus": {
+            "Node.Action.Starting": "技巧试炼-点击出发"
+        }
+    },
+    "常规刷体力-技巧节奏-点击出发": {
         "recognition": "OCR",
         "expected": "出发",
         "action": "Click",
@@ -133,7 +222,7 @@
             "Node.Action.Starting": "技巧试炼-点击出发"
         }
     },
-    "常规刷体力-技巧试炼格斗-点击出发": {
+    "常规刷体力-技巧格斗-点击出发": {
         "recognition": "OCR",
         "expected": "出发",
         "action": "Click",
