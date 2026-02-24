@@ -76,11 +76,11 @@
         "recognition": "DirectHit",
         "action": "DoNothing",
         "next": [
+            "[JumpBack]Sub_关闭活动",
             "[JumpBack]Sub_点击空白处继续",
             "[JumpBack]Sub_获得道具",
             "[JumpBack]Sub_关闭公告",
             "[JumpBack]Sub_关闭签到",
-            "[JumpBack]Sub_关闭活动",
             "[JumpBack]弹窗清理-处理点击任意区域进入",
             "[JumpBack]进入游戏-处理点击任意位置领取",
             "[JumpBack]进入游戏-处理公告界面",
