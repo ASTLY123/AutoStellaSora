@@ -400,10 +400,25 @@
             "threshold": 0.95
         },
         "next": [
-            "活动刷体力-快速战斗"
+            "活动刷体力-点击战斗关卡-星"
         ],
         "focus": {
             "Node.Action.Starting": "点击普通关卡"
+        }
+    },
+    "活动刷体力-点击战斗关卡-星": {
+        "recognition": "TemplateMatch",
+        "template": "战斗关卡.png",
+        "action": "Click",
+        "post_wait_freezes": {
+            "time": 2000,
+            "threshold": 0.95
+        },
+        "next": [
+            "活动刷体力-快速战斗"
+        ],
+        "focus": {
+            "Node.Action.Starting": "点击战斗关卡"
         }
     },
     "活动刷体力-快速战斗": {

@@ -70,7 +70,7 @@
         "action": "Click",
         "post_wait_freezes": {
             "time": 2000,
-            "threshold": 0.95
+            "threshold": 0.9
         },
         "next": [
             "送礼物-确认默契提升"
@@ -82,7 +82,7 @@
     "送礼物-确认默契提升": {
         "recognition": "OCR",
         "expected": "默契提升",
-        "pre_delay": 3000,
+        "pre_delay": 5000,
         "post_delay": 1000,
         "action": "Click",
         "next": [
