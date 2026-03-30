@@ -84,12 +84,23 @@
         "recognition": "OCR",
         "expected": "默契提升",
         "post_delay": 1000,
+        "action": "DoNothing",
+        "next": [
+            "送礼物-点击默契提升"
+        ],
+        "focus": {
+            "Node.Action.Starting": "确认默契提升"
+        }
+    },
+    "送礼物-点击默契提升": {
+        "recognition": "OCR",
+        "expected": "默契提升",
         "action": "Click",
         "next": [
             "邀约-点击邀约"
         ],
         "focus": {
-            "Node.Action.Starting": "确认默契提升"
+            "Node.Action.Starting": "点击默契提升"
         }
     },
     "邀约-点击邀约": {
