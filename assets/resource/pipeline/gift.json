@@ -95,6 +95,10 @@
     "送礼物-点击默契提升": {
         "recognition": "OCR",
         "expected": "默契提升",
+        "pre_wait_freezes": {
+            "time": 1000,
+            "threshold": 0.95
+        },
         "action": "Click",
         "next": [
             "邀约-点击邀约"
